@@ -1,0 +1,90 @@
+<html>
+    <body>
+    <div id="app">
+        <ul style="list-style: none;">
+            <template v-for="item in items">
+                <li> 
+                    <img :src="item.image">
+                </li>
+                <li> 
+                    {{item.title}}
+                </li>
+            </template>
+        </ul> 
+        <img :id="`thumbnail_${id}`" :src="image">
+        <div :style="[style, fontStyle]">
+            Test
+        </div>
+        <button type="button" @click="btnClick" >토글</button>
+        <div :class="[dropdown, toggle]">
+            <ul>
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+            </ul>
+        </div>
+        <button type="button" @click="add" >더하기</button>
+        {{counter}}
+        <input type="text" @keyup.enter="keyUp">
+    </div>  
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+<script>
+    let app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                items: [
+                    {
+                        id: 1,
+                        image: 'http://picsum.photos/210/118/?image=1',
+                        title: "컴"
+                    },
+                    {
+                        id: 2,
+                        image: 'http://picsum.photos/210/118/?image=100',
+                        title: "모래"
+                    },
+                ],
+                id: 1,
+                image: 'http://picsum.photos/200/200/?image=353',
+                style: {
+                    background: 'red'
+                },
+                fontStyle: {
+                    fontSize: '10px',
+                    fontFamily: 'dotum'
+                },
+                dropdown: 'dropdown',
+                toggle : {
+                    on: false
+                },
+                counter: 0
+            }
+        },
+        methods: {
+            add () {
+                this.counter++
+            },
+            keyUp (ev) {
+                console.log('ev',ev)
+            },
+            btnClick () {
+                this.toggle.on = !this.toggle.on
+            }
+        }
+    })
+</script>
+<style>
+    .dropdown ul {
+        display: none;
+        list-style: none;
+        margin: 0;
+        border: 1px solid black;
+        padding: 10px;
+        width: 200px;
+    }
+    .dropdown.on ul {
+        display: block;
+    }
+</style>

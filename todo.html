@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <div id="app">
+        <template>
+            <div>
+                <input v-model="userInput"></input>
+            </div>
+        </template>
+        </div>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+<script>
+    new Vue ({
+        el: '#app',
+        data () {
+            return {
+                userInput: ''
+            }
+        }
+    })
+</script>
