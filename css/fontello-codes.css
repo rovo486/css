@@ -1,0 +1,10 @@
+
+.icon-videocam:before { content: '\e800'; } /* '' */
+.icon-picture:before { content: '\e801'; } /* '' */
+.icon-camera:before { content: '\e802'; } /* '' */
+.icon-left-big:before { content: '\e803'; } /* '' */
+.icon-right-big:before { content: '\e804'; } /* '' */
+.icon-eject:before { content: '\e805'; } /* '' */
+.icon-umbrella:before { content: '\e806'; } /* '' */
+.icon-desktop:before { content: '\f108'; } /* '' */
+.icon-wifi:before { content: '\f1eb'; } /* '' */
